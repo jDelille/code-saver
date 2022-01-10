@@ -1,0 +1,41 @@
+@import "../../style/mixins.scss";
+
+.navbar {
+  display: flex;
+  color: var(--light-text);
+  padding: 0 8rem;
+  height: 130px;
+  align-items: center;
+  margin-top: 0rem;
+  .logout-btn {
+    @include link();
+  }
+  .nav-links {
+    margin-left: auto;
+  }
+  .link {
+    padding:  0.5rem 1rem;
+    border-radius: 4px;
+  }
+
+  .brand {
+    font-size: 2rem;
+  }
+
+  .login {
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    font-weight: normal;
+  }
+
+  .register {
+    background-color: var(--text-dark);
+    color: var(--light-color);
+    font-weight: normal;
+  }
+  a,
+  .logout-btn {
+    color: unset;
+    margin-right: 0.6rem;
+  }
+}
