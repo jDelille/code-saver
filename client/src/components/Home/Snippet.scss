@@ -2,26 +2,51 @@
 
 .snippet {
   @include card();
-  background: var(--light-color);
+  background: var(--primary-color);
   border-radius: 10px;
   padding: 1rem;
   margin: 1.5rem 0;
   box-shadow: var(--box-shadow);
-
   .title,
   .description,
   .code {
     margin-bottom: 1rem;
   }
 
+  .title {
+    font-size: 30px;
+    text-transform: capitalize;
+    width: 100%;
+  }
+
+  .description {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: lighter;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--dark-color);
+
+  }
+
+  .category {
+    font-size: 20px;
+  }
+
   .code {
-    font-family: monospace;
-    background: var(--dark-color);
-    padding: 0.5rem;
+    background: var(--primary-color);
     border-radius: 5px;
     font-size: 1rem;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--dark-color);
   }
+
+  span {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+   }
 
   .edit-btn,
   .delete-btn {
@@ -32,10 +57,26 @@
   .edit-btn {
    background: var(--accent-color);
    color: var(--text-light);
+   width: 60px;
+   font-size: 16px;
+   font-weight: lighter;
+
   }
 
   .delete-btn {
    background: var(--danger-color);
    color: var(--text-light);
+   width: 80px;
+   font-size: 16px;
+   font-weight: lighter;
+
+
   }
+
+  .category {
+    margin-bottom: 1rem;
+  }
+
 }
+
+

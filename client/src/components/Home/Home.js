@@ -10,8 +10,13 @@ function Home() {
   const [snippets, setSnippets] = useState([]);
   const [snippetEditorOpen, setSnippetEditorOpen] = useState(false);
   const [editSnippetData, setEditSnippetData] = useState(null);
-
+  const [search, setSearch] = useState("");
+  const [filtered, setFiltered] = useState([]);
   const { user } = useContext(UserContext);
+
+  function clearEditSnippetData() {
+    setEditSnippetData(null);
+  }
 
   useEffect(() => {
     if (!user) setSnippets([]);
@@ -46,27 +51,84 @@ function Home() {
     });
   }
 
+  function searchSnippet() {
+    let searchSnippets = [...snippets];
+    let filteredSnippets = searchSnippets.filter(
+      (item) =>
+        item.title.toUpperCase().includes(search.toUpperCase()) ||
+        item.category.toUpperCase().includes(search.toUpperCase()) ||
+        item.description.toUpperCase().includes(search.toUpperCase()) ||
+        item.code.toUpperCase().includes(search.toUpperCase())
+    );
+
+    return filteredSnippets.map((snippet, i) => {
+      return (
+        <Snippet
+          key={i}
+          snippet={snippet}
+          getSnippets={getSnippets}
+          editSnippet={editSnippet}
+        />
+      );
+    });
+  }
+
   return (
     <div className="home">
       {!snippetEditorOpen && user && (
-        <button className="add-btn" onClick={() => setSnippetEditorOpen(true)}>
-          Add snippet
-        </button>
+        <div className="home-controls">
+          <div className="control-bar">
+            <button
+              className="add-btn"
+              onClick={() => setSnippetEditorOpen(true)}
+            >
+              Add
+            </button>
+            <div className="search-controls">
+              <input
+                type="search"
+                placeholder="Search for snippet"
+                className="search-bar"
+                onChange={(e) => setSearch(e.target.value)}
+              />
+            </div>
+          </div>
+          <p className="snippets-length">You have {snippets.length} Snippets</p>
+
+          <h1> {search.length > 0 ? searchSnippet() : ""}</h1>
+        </div>
       )}
+
       {snippetEditorOpen && (
         <SnippetEditor
           setSnippetEditorOpen={setSnippetEditorOpen}
           getSnippets={getSnippets}
           editSnippetData={editSnippetData}
+          clearEditSnippetData={clearEditSnippetData}
         />
       )}
-      {snippets.length > 0 ? renderSnippets() : user && <p className="no-snippets-msg"> You have not added any snippets.</p>}
       {user === null && (
         <div className="home-text">
           <h2> Welcome to Code Snippets </h2>
           <p> Save lines of code to reuse in your projects. </p>
-          <p> Free to use. Just create an account and start saving some code!</p>
-          <Link to="/register" className="register-link-home"> Register Here </Link>
+          <p>Free to use. Just create an account and start saving some code!</p>
+          <Link to="/register" className="register-link-home">
+            Register Here
+          </Link>
+        </div>
+      )}
+      {user && (
+        <div className="collection-box">
+          <div className="control-bar">
+            <h1> Snippet Collection </h1>
+          </div>
+          {snippets.length > 0
+            ? renderSnippets()
+            : user && (
+                <p className="no-snippets-msg">
+                  You have not added any snippets yet.
+                </p>
+              )}
         </div>
       )}
     </div>

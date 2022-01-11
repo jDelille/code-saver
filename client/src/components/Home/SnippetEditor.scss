@@ -1,13 +1,36 @@
 @import "../../style/mixins.scss";
 
+.add-page {
+  width: 50%;
+  height: 100%;
+
+  .control-bar {
+    display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-color);
+      padding: 1rem;
+      border-radius: 0 4px 4px 0;
+      height: 70px;
+      font-size: 16px;
+      margin-bottom: 1.75rem;
+  }
+}
+
 .snippet-editor {
   @include card();
+  width: 80%;
+  margin: 0 auto;
   
+  height: 85%;
+  position: relative;
   .save-btn,
   .cancel-btn {
    @include btn();
    margin-right: 1rem;
   }
+
+
 
   .save-btn {
    background: var(--accent-color);
@@ -17,5 +40,22 @@
   .cancel-btn {
    background: var(--danger-color);
    color: var(--primary-color);
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 2%;
+  }
+}
+
+@media only screen and (max-width: 600px) { 
+  .add-page {
+    width: 100%;
+    margin-bottom: 12rem;
+
+    .snippet-editor {
+      height: 110%;
+      width: 100%;
+    }
   }
 }

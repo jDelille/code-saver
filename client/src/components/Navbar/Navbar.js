@@ -20,7 +20,7 @@ function Navbar() {
       {user === null ? (
         <div className="nav-links">
           <Link to="/login" className="link login"> Log In </Link>
-          <Link to="/register" className="link register" > Register </Link>
+          {/* <Link to="/register" className="link register" > Register </Link> */}
         </div>
       ) : (
         user && <button className="logout-btn" onClick={logOut}> Log out </button>

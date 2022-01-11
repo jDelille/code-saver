@@ -1,38 +1,153 @@
-@import '../../style/mixins.scss';
+@import "../../style/mixins.scss";
 
 .home {
- .add-btn {
-  @include btn();
-  background: var(--accent-color);
-  color: var(--primary-color);
- }
- height: calc(100vh - 130px);
- width: 100%;
- display: flex;
- 
- .no-snippets-msg {
-  margin-top: 2rem;
-  color: var(--accent-color);
- }
+  .add-btn {
+    @include btn();
+    width: 200px;
+    height: 50px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+  }
+  height: calc(100vh - 130px);
+  width: 100%;
+  display: flex;
+  padding: 0rem 8rem;
+  .snippets-length {
+    margin: 2rem 0;
+  }
+  .no-snippets-msg {
+    margin-top: 2rem;
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 2rem;
+  }
+  .home-text {
+    margin: 0 auto;
+    margin-top: 4rem;
+  }
 
- .home-text {
-  margin: 0 auto;
-  margin-top: 4rem;
- }
+  .home-text h2 {
+    font-size: 4rem;
+  }
 
- .home-text h2 {
-  font-size: 4rem;
- }
+  .home-text p {
+    font-size: 2rem;
+  }
 
- .home-text p {
-  font-size: 2rem;
- }
+  .register-link-home {
+    position: relative;
+    top: 20%;
+    width: 300px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.75rem 3rem;
+  }
 
- .register-link-home {
-  position: relative;
-  top: 20%;
-  background-color: var(--accent-color);
-  color: var(--primary-color);
-  padding: 0.75rem 3rem;
- }
+  .login-link-home {
+    position: relative;
+    top: 40%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.75rem 3rem;
+  }
+
+  .collection-box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .control-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-color);
+      padding: 1rem;
+      border-radius: 0 4px 4px 0;
+      height: 70px;
+      font-size: 16px;
+    }
+  }
+
+  .home-controls {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    .control-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--dark-color);
+      padding: 0.75rem;
+
+      height: 70px;
+      border-radius: 4px 0 0 4px;
+      .search-controls {
+        display: flex;
+        align-items: center;
+        .search-bar {
+          width: 260px;
+          height: 45px;
+          padding-left: 8%;
+          border-radius: 5px;
+          background-color: var(--primary-color);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .home-text {
+     font-size: 22px;
+     padding: 0;
+     margin: 0;
+    }
+
+    .home-text h2 {
+     font-size: 3rem;
+     text-align: left;
+     margin-bottom: 1rem;
+    }
+
+    .home-text p {
+     text-align: left;
+     margin: 0 auto;
+     font-size: 1.9rem;
+    }
+  
+    .home-controls {
+      width: 100%;
+
+      .control-bar {
+        width: 100%;
+        .search-controls {
+         .search-bar {
+          border-radius: 0 4px 4px 0;
+          border-left: none;
+         }
+        }
+      }
+      
+
+
+      .add-btn {
+        width: 100px;
+        height: 45px;
+        border-radius: 4px 0 0 4px;
+        border: 1px solid lightgray;
+      }
+
+      
+    }
+
+    .collection-box {
+     width: 100%;
+    }
+  }
 }

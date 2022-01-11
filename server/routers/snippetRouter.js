@@ -13,20 +13,28 @@ router.get("/", auth, async (req, res) => {
 
 router.post("/", auth, async (req, res) => {
   try {
-    const { title, description, code } = req.body;
+    const { title, description, code, category } = req.body;
 
     // validation
 
     if (!description && !code) {
       return res
         .status(400)
-        .json({ errorMessage: "You need to enter a description or some code." });
+        .json({
+          errorMessage: "You need to enter a description or some code.",
+        });
     }
+
+    if (!category)
+      return res
+        .status(400)
+        .json({ errorMessage: "You must include a category." });
 
     const newSnippet = new Snippet({
       title,
       description,
       code,
+      category,
       user: req.user,
     });
 
@@ -40,7 +48,7 @@ router.post("/", auth, async (req, res) => {
 
 router.put("/:id", auth, async (req, res) => {
   try {
-    const { title, description, code } = req.body;
+    const { title, description, code, category } = req.body;
     const snippetId = req.params.id;
 
     // validation
@@ -48,7 +56,9 @@ router.put("/:id", auth, async (req, res) => {
     if (!description && !code) {
       return res
         .status(400)
-        .json({ errorMessage: "You need to enter a description or some code." });
+        .json({
+          errorMessage: "You need to enter a description or some code.",
+        });
     }
 
     if (!snippetId)
@@ -69,6 +79,7 @@ router.put("/:id", auth, async (req, res) => {
     originalSnippet.title = title;
     originalSnippet.description = description;
     originalSnippet.code = code;
+    originalSnippet.category = category;
 
     const savedSnippet = await originalSnippet.save();
 

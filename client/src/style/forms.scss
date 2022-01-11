@@ -1,4 +1,5 @@
 .form {
+  height: 50%;
   label,
   input,
   textarea {
@@ -22,6 +23,9 @@
 
   textarea {
     resize: none;
-    height: 200px;
+    height: 70%;
+    margin-bottom: 2rem;
   }
 }
+
+

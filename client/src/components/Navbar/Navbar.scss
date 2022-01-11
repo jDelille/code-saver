@@ -4,7 +4,7 @@
   display: flex;
   color: var(--light-text);
   padding: 0 8rem;
-  height: 130px;
+  height: 100px;
   align-items: center;
   margin-top: 0rem;
   .logout-btn {
@@ -38,4 +38,26 @@
     color: unset;
     margin-right: 0.6rem;
   }
+
+  .logout-btn {
+    margin-left: auto;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+ .navbar {
+   padding: 0 1rem;
+   margin-bottom: 1rem;
+   .nav-links {
+     display: flex;
+     align-items: center;
+     width: 80%;
+    //  display: none;
+     .login {
+       width: 40%;
+       margin-left: auto;
+     }
+   }
+ }   
 }

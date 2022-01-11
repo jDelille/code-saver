@@ -12,6 +12,9 @@ const snippetSchema = new mongoose.Schema(
     code: {
       type: String,
     },
+    category: {
+      type: String,
+    },
     user: {
       type: ObjectId,
       required: true
