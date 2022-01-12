@@ -1,11 +1,12 @@
 import axios from "axios";
 import React from "react";
 import "./Snippet.scss";
+import domain from "../../util/domain";
 
 function Snippet({ snippet, getSnippets, editSnippet }) {
   async function deleteSnippet() {
     if (window.confirm("Do you want to delete this snippet?"))
-      await axios.delete(`http://localhost:5000/snippet/${snippet._id}`);
+      await axios.delete(`${domain}/snippet/${snippet._id}`);
 
     getSnippets();
   }

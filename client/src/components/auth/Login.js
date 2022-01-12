@@ -6,6 +6,7 @@ import UserContext from "../../context/UserContext";
 import ErrorMessage from "../misc/ErrorMessage";
 import "./AuthForm.scss";
 import "./AuthPages.scss"
+import domain from '../../util/domain'
 
 function Login() {
   const [formEmail, setFormEmail] = useState("");
@@ -25,7 +26,7 @@ function Login() {
     };
 
     try {
-      await axios.post("http://localhost:5000/auth/login", loginData);
+      await axios.post(`${domain}/auth/login`, loginData);
     } catch (err) {
       if (err.response) {
         if (err.response.data.errorMessage) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./SnippetEditor.scss";
+import domain from "../../util/domain";
 
 function SnippetEditor({ getSnippets, setSnippetEditorOpen, editSnippetData,  clearEditSnippetData }) {
   const [editorTitle, setEditorTitle] = useState("");
@@ -36,10 +37,10 @@ function SnippetEditor({ getSnippets, setSnippetEditorOpen, editSnippetData,  cl
     
 
     if (!editSnippetData) {
-      await axios.post("http://localhost:5000/snippet/", snippetData);
+      await axios.post(`${domain}/snippet/`, snippetData);
     } else {
       await axios.put(
-        `http://localhost:5000/snippet/${editSnippetData._id}`,
+        `${domain}/snippet/${editSnippetData._id}`,
         snippetData
       );
     }
