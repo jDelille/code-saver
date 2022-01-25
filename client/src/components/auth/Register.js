@@ -45,7 +45,7 @@ function Register() {
   return (
     <div className="register-page">
       <div className="auth-form-register">
-        <h2> Create your Snippet Account </h2>
+        <h2> Create an account </h2>
         {errorMessage && (
           <ErrorMessage
             message={errorMessage}

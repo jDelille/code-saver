@@ -9,18 +9,18 @@ dotenv.config();
 // set up express server
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://www.shmagity.com"],
     credentials: true,
   })
 );
 app.use(cookieParser());
 
-app.listen(PORT, () => console.log(`Server started from port ${PORT}`));
+app.listen(PORT, () => console.log(`Server started from port ${PORT}...`));
 
 // set up routers
 

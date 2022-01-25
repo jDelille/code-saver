@@ -79,13 +79,7 @@ function Home() {
       {!snippetEditorOpen && user && (
         <div className="home-controls">
           <div className="control-bar">
-            <button
-              className="add-btn"
-              onClick={() => setSnippetEditorOpen(true)}
-            >
-              Add
-            </button>
-            <div className="search-controls">
+          <div className="search-controls">
               <input
                 type="search"
                 placeholder="Search for snippet"
@@ -93,10 +87,24 @@ function Home() {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
+            <button
+              className="add-btn"
+              onClick={() => setSnippetEditorOpen(true)}
+            >
+              Add
+            </button>
+            
           </div>
           <p className="snippets-length">You have {snippets.length} Snippets</p>
-
           <h1> {search.length > 0 ? searchSnippet() : ""}</h1>
+          {snippets.length > 0
+            ? renderSnippets()
+            : user && (
+                <p className="no-snippets-msg">
+                  You have not added any snippets yet.
+                </p>
+              )}
+          
         </div>
       )}
 
@@ -110,7 +118,7 @@ function Home() {
       )}
       {user === null && (
         <div className="home-text">
-          <h2> Welcome to Code Snippets </h2>
+          <h2> Welcome to Shmagity </h2>
           <p> Save lines of code to reuse in your projects. </p>
           <p>Free to use. Just create an account and start saving some code!</p>
           <Link to="/register" className="register-link-home">
@@ -118,20 +126,7 @@ function Home() {
           </Link>
         </div>
       )}
-      {user && (
-        <div className="collection-box">
-          <div className="control-bar">
-            <h1> Snippet Collection </h1>
-          </div>
-          {snippets.length > 0
-            ? renderSnippets()
-            : user && (
-                <p className="no-snippets-msg">
-                  You have not added any snippets yet.
-                </p>
-              )}
-        </div>
-      )}
+      
     </div>
   );
 }

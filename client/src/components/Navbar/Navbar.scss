@@ -20,27 +20,36 @@
 
   .brand {
     font-size: 2rem;
+    font-weight: lighter;
   }
 
   .login {
     background-color: var(--accent-color);
     color: var(--light-color);
     font-weight: normal;
+    font-weight: lighter;
+
   }
 
   .register {
     background-color: var(--text-dark);
     color: var(--light-color);
     font-weight: normal;
+    font-weight: lighter;
+
   }
   a,
   .logout-btn {
     color: unset;
     margin-right: 0.6rem;
+    font-weight: lighter;
+
   }
 
   .logout-btn {
     margin-left: auto;
+    font-weight: lighter;
+
   }
 }
 

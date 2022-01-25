@@ -17,19 +17,22 @@
     font-size: 30px;
     text-transform: capitalize;
     width: 100%;
+    font-weight: lighter;
   }
 
   .description {
     text-transform: capitalize;
     font-size: 18px;
-    font-weight: lighter;
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--dark-color);
+    font-weight: lighter;
 
   }
 
   .category {
     font-size: 20px;
+    font-weight: lighter;
+
   }
 
   .code {

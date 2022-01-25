@@ -3,12 +3,12 @@
 .add-page {
   width: 50%;
   height: 100%;
+  margin: 0 auto;
 
   .control-bar {
     display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--dark-color);
       padding: 1rem;
       border-radius: 0 4px 4px 0;
       height: 70px;

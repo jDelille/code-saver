@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <Link to="/">
-        <h1 className="brand"> Code Snippets </h1>
+        <h1 className="brand"> Shmagity </h1>
       </Link>
       {user === null ? (
         <div className="nav-links">

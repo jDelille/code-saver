@@ -7,6 +7,8 @@
     height: 50px;
     background: var(--accent-color);
     color: var(--primary-color);
+    border-radius: 25px;
+    margin-left: auto;
   }
   height: calc(100vh - 130px);
   width: 100%;
@@ -51,34 +53,17 @@
     padding: 0.75rem 3rem;
   }
 
-  .collection-box {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-
-    .control-bar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--dark-color);
-      padding: 1rem;
-      border-radius: 0 4px 4px 0;
-      height: 70px;
-      font-size: 16px;
-    }
-  }
 
   .home-controls {
     display: flex;
     flex-direction: column;
     width: 50%;
+    margin: 0 auto;
 
     .control-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--dark-color);
-      padding: 0.75rem;
 
       height: 70px;
       border-radius: 4px 0 0 4px;
