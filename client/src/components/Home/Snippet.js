@@ -11,6 +11,9 @@ function Snippet({ snippet, getSnippets, editSnippet }) {
     getSnippets();
   }
 
+
+
+
   return (
     <div className="snippet">
       {snippet.title && (
@@ -22,7 +25,7 @@ function Snippet({ snippet, getSnippets, editSnippet }) {
       )}
       {snippet.category && (
         <h2 className="category">
-          <span>Category: </span> <br /> {snippet.category}
+          <span>Language | Framework: </span> <br /> {snippet.category}
         </h2>
       )}
       {snippet.description && (

@@ -4,9 +4,10 @@
   display: flex;
   color: var(--light-text);
   padding: 0 8rem;
-  height: 100px;
+  height: 75px;
   align-items: center;
   margin-top: 0rem;
+  box-shadow: var(--box-shadow);
   .logout-btn {
     @include link();
   }

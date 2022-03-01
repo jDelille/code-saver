@@ -75,7 +75,7 @@ function SnippetEditor({ getSnippets, setSnippetEditorOpen, editSnippetData,  cl
             value={editorTitle}
             onChange={(e) => setEditorTitle(e.target.value)}
           />
-          <label htmlFor="editor-category"> Category </label>
+          <label htmlFor="editor-category"> Language | Framework </label>
           <input
             type="text"
             id="editor-category"

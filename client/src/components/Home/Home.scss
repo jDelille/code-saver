@@ -1,16 +1,16 @@
 @import "../../style/mixins.scss";
 
 .home {
+  background-color: #f0f0ed;
   .add-btn {
     @include btn();
     width: 200px;
     height: 50px;
     background: var(--accent-color);
     color: var(--primary-color);
-    border-radius: 25px;
-    margin-left: auto;
+    margin-top: 1rem;
   }
-  height: calc(100vh - 130px);
+  height: calc(100vh - 75px);
   width: 100%;
   display: flex;
   padding: 0rem 8rem;
@@ -53,20 +53,28 @@
     padding: 0.75rem 3rem;
   }
 
-
-  .home-controls {
+  .content {
+    width: 60%;
+    position: relative;
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    margin: 0 auto;
-
+    justify-content: center;
+    margin: 2rem auto;
+    .home-controls {
+      display: flex;
+      width: 70%;
+      margin: 0 auto;
+      overflow-y: scroll;
+      justify-content: space-evenly;
+    }
     .control-bar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      flex-direction: column;
+      background-color: var(--primary-color);
+      box-shadow: var(--box-shadow);
+      height: 50%;
 
-      height: 70px;
-      border-radius: 4px 0 0 4px;
+      border-radius: 10px;
       .search-controls {
         display: flex;
         align-items: center;
@@ -74,9 +82,19 @@
           width: 260px;
           height: 45px;
           padding-left: 8%;
-          border-radius: 5px;
           background-color: var(--primary-color);
         }
+      }
+      .show-tech {
+        border-top: 1px solid lightgray;
+        width: 100%;
+        height: 100%;
+        margin: 0 0.5rem;
+        margin-top: 1rem;
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
       }
     }
   }
@@ -89,37 +107,35 @@
     flex-direction: column;
 
     .home-text {
-     font-size: 22px;
-     padding: 0;
-     margin: 0;
+      font-size: 22px;
+      padding: 0;
+      margin: 0;
     }
 
     .home-text h2 {
-     font-size: 3rem;
-     text-align: left;
-     margin-bottom: 1rem;
+      font-size: 3rem;
+      text-align: left;
+      margin-bottom: 1rem;
     }
 
     .home-text p {
-     text-align: left;
-     margin: 0 auto;
-     font-size: 1.9rem;
+      text-align: left;
+      margin: 0 auto;
+      font-size: 1.9rem;
     }
-  
+
     .home-controls {
       width: 100%;
 
       .control-bar {
         width: 100%;
         .search-controls {
-         .search-bar {
-          border-radius: 0 4px 4px 0;
-          border-left: none;
-         }
+          .search-bar {
+            border-radius: 0 4px 4px 0;
+            border-left: none;
+          }
         }
       }
-      
-
 
       .add-btn {
         width: 100px;
@@ -127,12 +143,10 @@
         border-radius: 4px 0 0 4px;
         border: 1px solid lightgray;
       }
-
-      
     }
 
     .collection-box {
-     width: 100%;
+      width: 100%;
     }
   }
 }

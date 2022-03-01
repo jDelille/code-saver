@@ -74,12 +74,33 @@ function Home() {
     });
   }
 
+  console.log(snippets);
+
+  let categoryArr = [];
+
+  snippets.map((item) => {
+    return categoryArr.push(
+      item.category.charAt(0).toUpperCase() +
+        item.category.substring(1).toLowerCase()
+    );
+  });
+  let categorySet = [...new Set(categoryArr)];
+  console.log(categorySet);
+
+  console.log(categoryArr)
+  categoryArr.map((count) => {
+    return console.log(count)
+  })
+
   return (
     <div className="home">
       {!snippetEditorOpen && user && (
-        <div className="home-controls">
+        <div className="content">
           <div className="control-bar">
-          <div className="search-controls">
+            <p className="snippets-length">
+              You have {snippets.length} Snippets
+            </p>
+            <div className="search-controls">
               <input
                 type="search"
                 placeholder="Search for snippet"
@@ -93,18 +114,30 @@ function Home() {
             >
               Add
             </button>
-            
+            <div className="show-tech">
+            <p> Languages you use: </p>
+              {categorySet.map((item, index) => {
+                return (
+                  <div className="category-box" key={index}>
+                    <p>{item}</p>
+                    <p></p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
-          <p className="snippets-length">You have {snippets.length} Snippets</p>
-          <h1> {search.length > 0 ? searchSnippet() : ""}</h1>
-          {snippets.length > 0
-            ? renderSnippets()
-            : user && (
-                <p className="no-snippets-msg">
-                  You have not added any snippets yet.
-                </p>
-              )}
-          
+          <div className="home-controls">
+            <div className="snippet-container">
+              <h1> {search.length > 0 ? searchSnippet() : ""}</h1>
+              {snippets.length > 0
+                ? renderSnippets()
+                : user && (
+                    <p className="no-snippets-msg">
+                      You have not added any snippets yet.
+                    </p>
+                  )}
+            </div>
+          </div>
         </div>
       )}
 
@@ -126,7 +159,6 @@ function Home() {
           </Link>
         </div>
       )}
-      
     </div>
   );
 }
