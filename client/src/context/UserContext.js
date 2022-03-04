@@ -5,7 +5,6 @@ import domain from '../util/domain'
 const UserContext = createContext();
 
 function UserContextProvider(props) {
-  console.log(domain)
   const [user, setUser] = useState(undefined);
 
   async function getUser() {

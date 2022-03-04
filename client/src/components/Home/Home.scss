@@ -13,7 +13,7 @@
   height: calc(100vh - 75px);
   width: 100%;
   display: flex;
-  padding: 0rem 8rem;
+  padding: 0rem 4rem;
   .snippets-length {
     margin: 2rem 0;
   }
@@ -54,7 +54,7 @@
   }
 
   .content {
-    width: 60%;
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
@@ -72,9 +72,8 @@
       flex-direction: column;
       background-color: var(--primary-color);
       box-shadow: var(--box-shadow);
-      height: 50%;
-
       border-radius: 10px;
+      height: 50%;
       .search-controls {
         display: flex;
         align-items: center;
@@ -88,7 +87,6 @@
       .show-tech {
         border-top: 1px solid lightgray;
         width: 100%;
-        height: 100%;
         margin: 0 0.5rem;
         margin-top: 1rem;
         padding: 1rem 0.5rem;
@@ -105,7 +103,6 @@
     padding: 0 1rem;
     display: flex;
     flex-direction: column;
-
     .home-text {
       font-size: 22px;
       padding: 0;
@@ -123,30 +120,44 @@
       margin: 0 auto;
       font-size: 1.9rem;
     }
-
-    .home-controls {
+    .content {
       width: 100%;
-
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh;
+      position: relative;
       .control-bar {
         width: 100%;
+        padding: 2rem 0 ;
+        padding-top: 0;
+        
         .search-controls {
           .search-bar {
             border-radius: 0 4px 4px 0;
             border-left: none;
+            
           }
         }
+        .show-tech {
+          height: 100px;
+          display: none;
+        }
       }
-
-      .add-btn {
-        width: 100px;
-        height: 45px;
-        border-radius: 4px 0 0 4px;
-        border: 1px solid lightgray;
+      .home-controls {
+        width: 100%;
+        display: flex;
+        position: relative;
+        margin-top: 2rem;
+        .add-btn {
+          width: 100px;
+          height: 45px;
+          border-radius: 4px 0 0 4px;
+          border: 1px solid lightgray;
+        }
       }
+      
     }
 
-    .collection-box {
-      width: 100%;
-    }
+    
   }
 }

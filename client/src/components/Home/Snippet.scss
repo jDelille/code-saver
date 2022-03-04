@@ -26,13 +26,11 @@
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--dark-color);
     font-weight: lighter;
-
   }
 
   .category {
     font-size: 20px;
     font-weight: lighter;
-
   }
 
   .code {
@@ -40,7 +38,7 @@
     border-radius: 5px;
     font-size: 1rem;
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: bold;
     padding-bottom: 1rem;
     border-bottom: 2px solid var(--dark-color);
@@ -49,7 +47,7 @@
   span {
     font-size: 1rem;
     margin-bottom: 0.75rem;
-   }
+  }
 
   .edit-btn,
   .delete-btn {
@@ -58,28 +56,38 @@
   }
 
   .edit-btn {
-   background: var(--accent-color);
-   color: var(--text-light);
-   width: 60px;
-   font-size: 16px;
-   font-weight: lighter;
-
+    background: var(--accent-color);
+    color: var(--text-light);
+    width: 60px;
+    font-size: 16px;
+    font-weight: lighter;
   }
 
   .delete-btn {
-   background: var(--danger-color);
-   color: var(--text-light);
-   width: 80px;
-   font-size: 16px;
-   font-weight: lighter;
-
-
+    background: var(--danger-color);
+    color: var(--text-light);
+    width: 80px;
+    font-size: 16px;
+    font-weight: lighter;
   }
 
   .category {
     margin-bottom: 1rem;
   }
-
 }
 
-
+@media only screen and (max-width: 600px) {
+  .snippet {
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    position: relative;
+    .title,
+    .description,
+    .code {
+      width: 100%;
+      overflow-x: scroll;
+    }
+  }
+}

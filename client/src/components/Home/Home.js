@@ -74,7 +74,6 @@ function Home() {
     });
   }
 
-  console.log(snippets);
 
   let categoryArr = [];
 
@@ -85,12 +84,8 @@ function Home() {
     );
   });
   let categorySet = [...new Set(categoryArr)];
-  console.log(categorySet);
 
-  console.log(categoryArr)
-  categoryArr.map((count) => {
-    return console.log(count)
-  })
+
 
   return (
     <div className="home">
@@ -115,7 +110,7 @@ function Home() {
               Add
             </button>
             <div className="show-tech">
-            <p> Languages you use: </p>
+            <p> Most used: </p>
               {categorySet.map((item, index) => {
                 return (
                   <div className="category-box" key={index}>
