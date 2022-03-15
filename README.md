@@ -24,5 +24,6 @@ Backend
 
 Hosting 
 
-* Netlify
+* Netlify - Frontend
+* Heroku - Backend
 
